@@ -33,17 +33,6 @@
             android:layout_columnWeight="1">
         </TextView>
 
-        <Button
-            android:id="@+id/light_noAll"
-            android:background="@drawable/setting_window_two_d"
-            android:layout_columnWeight="1"
-            android:text="一键关闭"
-            android:textSize="16dp"
-            android:textColor="#F12323"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_column="4"></Button>
-
         <ImageView
             android:layout_columnWeight="1"
             android:id="@+id/light_add"

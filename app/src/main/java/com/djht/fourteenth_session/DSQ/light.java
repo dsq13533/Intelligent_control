@@ -97,7 +97,7 @@ public class light extends AppCompatActivity implements View.OnClickListener{
                     @Override
                     public void onPositiveClick() {
                         dialog.dismiss();
-                        Toast.makeText(light.this,dialog.getLight_name()+dialog.getLight_spinner(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(light.this,dialog.getLight_name()+dialog.getLight_spinner()+"未找到设备添加失败",Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onNegtiveClick() {

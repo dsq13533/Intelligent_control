@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 
@@ -21,8 +22,10 @@ import com.djht.fourteenth_session.R;
 
 public class home_D extends Fragment implements View.OnClickListener{
 
-    private ImageView main_light;
-    private ImageView main_air_conditioning;
+    private ConstraintLayout main_light;
+    private ConstraintLayout main_air_conditioning;
+    private ConstraintLayout main_electronic_door_lock;
+    private ConstraintLayout main_water_heater;
 
     @Nullable
     @Override
@@ -42,6 +45,10 @@ public class home_D extends Fragment implements View.OnClickListener{
         main_air_conditioning.setOnClickListener(this);
         main_light=getActivity().findViewById(R.id.main_light);
         main_light.setOnClickListener(this);
+        main_electronic_door_lock=getActivity().findViewById(R.id.main_electronic_door_lock);
+        main_electronic_door_lock.setOnClickListener(this);
+        main_water_heater=getActivity().findViewById(R.id.main_water_heater);
+        main_water_heater.setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +65,8 @@ public class home_D extends Fragment implements View.OnClickListener{
             case R.id.main_air_conditioning:
                 Intent intent_air_condition = new Intent(this.getActivity(), air_condition_main_h.class);
                 startActivity(intent_air_condition);
+                break;
+            case R.id.main_water_heater:
                 break;
             case R.id.main_smart_optimization:
                 break;

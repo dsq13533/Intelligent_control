@@ -11,6 +11,6 @@
         android:bottomRightRadius="50dp"
         android:bottomLeftRadius="50dp"/>
     <!-- 这里设置边框 -->
-    <stroke android:width="5dp" android:color="#ffffff" />
+    <stroke android:width="5dp" android:color="#FFFFFF" />
 
 </shape>

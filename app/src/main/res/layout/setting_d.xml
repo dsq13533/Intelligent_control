@@ -65,6 +65,7 @@
         </GridLayout>
 
         <ScrollView
+            android:layout_marginTop="20dp"
             android:background="@drawable/setting_window_two_d"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

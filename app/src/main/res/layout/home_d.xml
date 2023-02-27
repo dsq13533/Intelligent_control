@@ -1,144 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_column="1"
-    android:layout_row="1"
-    android:padding="16dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gridLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_row="1"
+    android:layout_column="1"
+    android:padding="12dp">
 
-    <LinearLayout
-        android:padding="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_columnWeight="1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_light"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
-            android:id="@+id/main_light"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/light">
-        </ImageView>
+            android:id="@+id/light"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/light"
+            app:layout_constraintBottom_toTopOf="@+id/guideline14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
             android:text="灯"
-            android:textSize="24dp"
             android:textColor="#000000"
-            android:gravity="center">
-        </TextView>
-    </LinearLayout>
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline14"></TextView>
 
-    <LinearLayout
-        android:padding="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:layout_columnWeight="1">
-        <ImageView
-            android:id="@+id/main_electronic_door_lock"
-            android:layout_gravity="center"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/electronic_door_lock">
-        </ImageView>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_electronic_door_lock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintStart_toStartOf="@+id/guideline15"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/electronic_door_lock"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/electronic_door_lock"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
             android:text="智能门锁"
-            android:textSize="24dp"
             android:textColor="#000000"
-            android:gravity="center">
-        </TextView>
-    </LinearLayout>
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline16"></TextView>
 
-    <LinearLayout
-        android:padding="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:layout_columnWeight="1">
-        <ImageView
-            android:id="@+id/main_air_conditioning"
-            android:layout_gravity="center"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/air_conditioning_main">
-        </ImageView>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_air_conditioning"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/air_conditioning"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/air_conditioning_main"
+            app:layout_constraintBottom_toTopOf="@+id/guideline18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"></ImageView>
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
             android:text="空调"
-            android:textSize="24dp"
             android:textColor="#000000"
-            android:gravity="center">
-        </TextView>
-    </LinearLayout>
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline18"></TextView>
 
-    <LinearLayout
-        android:padding="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:layout_row="1"
-        android:layout_column="1"
-        android:layout_columnWeight="1">
-        <ImageView
-            android:id="@+id/main_smart_optimization"
-            android:layout_gravity="center"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/smart_optimization">
-        </ImageView>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_water_heater"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12">
+
+        <ImageView
+            android:id="@+id/water_heater"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/water_heater"
+            app:layout_constraintBottom_toTopOf="@+id/guideline20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
-            android:layout_gravity="center"
+            android:id="@+id/textView14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="热水器"
+            android:textColor="#000000"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline20"></TextView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_smart_optimization"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintStart_toStartOf="@+id/guideline15"
+        app:layout_constraintTop_toTopOf="@+id/guideline12">
+
+        <ImageView
+            android:id="@+id/smart_optimization"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/smart_optimization"
+            app:layout_constraintBottom_toTopOf="@+id/guideline21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
             android:text="智能网关"
-            android:textSize="24dp"
             android:textColor="#000000"
-            android:gravity="center">
-        </TextView>
-    </LinearLayout>
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline21"></TextView>
 
-    <LinearLayout
-        android:padding="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:layout_row="2"
-        android:layout_column="0"
-        android:layout_columnWeight="1">
-        <ImageView
-            android:id="@+id/main_more_three"
-            android:layout_gravity="center"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/more_three">
-        </ImageView>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_more_three"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/guideline12">
 
         <TextView
-            android:layout_gravity="center"
+            android:id="@+id/textView13"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="更多"
+            android:textColor="#000000"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline22"></TextView>
+
+        <ImageView
+            android:id="@+id/more_three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@mipmap/more_three"
+            app:layout_constraintBottom_toTopOf="@+id/guideline22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="更多"
-            android:textSize="24dp"
-            android:textColor="#000000"
-            android:gravity="center">
-        </TextView>
-    </LinearLayout>
-</GridLayout>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.335" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.665" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/on_off_h" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

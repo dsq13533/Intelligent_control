@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.djht.fourteenth_session.DSQ.light;
 import com.djht.fourteenth_session.HJK.air_condition_main_h;
+import com.djht.fourteenth_session.HJK.water_main_h;
 import com.djht.fourteenth_session.R;
 
 public class home_D extends Fragment implements View.OnClickListener{
@@ -67,6 +68,8 @@ public class home_D extends Fragment implements View.OnClickListener{
                 startActivity(intent_air_condition);
                 break;
             case R.id.main_water_heater:
+                Intent intent_water_condition = new Intent(this.getActivity(), water_main_h.class);
+                startActivity(intent_water_condition);
                 break;
             case R.id.main_smart_optimization:
                 break;

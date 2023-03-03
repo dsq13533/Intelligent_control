@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/water_nav"
+    app:startDestination="@id/water_list_H">
+
+    <fragment
+        android:id="@+id/water_list_H"
+        android:name="com.djht.fourteenth_session.HJK.Fragment.water_list_H"
+        android:label="water_list__h"
+        tools:layout="@layout/water_list__h" >
+        <action
+            android:id="@+id/action_water_list_H_to_water_control_H"
+            app:destination="@id/water_control_H" />
+    </fragment>
+    <fragment
+        android:id="@+id/water_control_H"
+        android:name="com.djht.fourteenth_session.HJK.Fragment.water_control_H"
+        android:label="water_control__h"
+        tools:layout="@layout/water_control__h" >
+        <action
+            android:id="@+id/action_water_control_H_to_water_list_H"
+            app:destination="@id/water_list_H" />
+    </fragment>
+</navigation>

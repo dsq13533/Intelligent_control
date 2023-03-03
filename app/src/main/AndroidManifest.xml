@@ -15,7 +15,16 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DSQ.light_setting"></activity>
+        <activity
+            android:name=".HJK.water_main_h"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/title_activity_water_main_h">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".DSQ.light_setting" />
         <activity android:name=".DSQ.light" />
         <activity
             android:name=".HJK.air_condition_main_h"

@@ -1,29 +1,17 @@
 package com.djht.fourteenth_session.HJK;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.djht.fourteenth_session.R;
 
-import java.util.ArrayList;
-
-public class air_condition_main_h extends AppCompatActivity {
-    //是否使用特殊的标题栏背景颜色，android5.0以上可以设置状态栏背景色，如果不使用则使用透明色值
+public class water_main_h extends AppCompatActivity {
     protected boolean useThemestatusBarColor = false;
 
     protected boolean useStatusBarColor = true;
@@ -51,13 +39,10 @@ public class air_condition_main_h extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.air_condition_main_h);
         setStatusBar();
-
+        setContentView(R.layout.water_main_h);
     }
-
 }

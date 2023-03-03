@@ -22,12 +22,11 @@ import com.djht.fourteenth_session.R;
 
 import java.util.ArrayList;
 
-
-public class air_condition_list_H extends Fragment implements View.OnClickListener,airRecyclerViewAdapter.ItemClickListener{
+public class water_list_H extends Fragment implements View.OnClickListener,airRecyclerViewAdapter.ItemClickListener{
     RecyclerView recyclerView;
     private View view;
     private ArrayList<itemModel_h> itemList = new ArrayList<>();
-    private airRecyclerViewAdapter airRecyclerViewAdapter;
+    private com.djht.fourteenth_session.HJK.waterRecylerViewAdapter waterRecyclerViewAdapter;
     private ImageView back_btn;
     private ImageView add_btn;
     private Context context;
@@ -41,8 +40,8 @@ public class air_condition_list_H extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.air_condition_list__h, container, false);
-        airRecyclerViewAdapter = new airRecyclerViewAdapter(this);
+        view = inflater.inflate(R.layout.water_list__h, container, false);
+        waterRecyclerViewAdapter = new com.djht.fourteenth_session.HJK.waterRecylerViewAdapter(this);
         initRecyclerView();
         initData();
         initBtn();
@@ -63,8 +62,8 @@ public class air_condition_list_H extends Fragment implements View.OnClickListen
      */
     private void initRecyclerView(){
         recyclerView = view.findViewById(R.id.water_item_recylerView);
-        airRecyclerViewAdapter = new airRecyclerViewAdapter(getActivity(),itemList);
-        recyclerView.setAdapter(airRecyclerViewAdapter);
+        waterRecyclerViewAdapter = new com.djht.fourteenth_session.HJK.waterRecylerViewAdapter(getActivity(),itemList);
+        recyclerView.setAdapter(waterRecyclerViewAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity() ,2));
     }
 
@@ -75,7 +74,7 @@ public class air_condition_list_H extends Fragment implements View.OnClickListen
     private void initData(){
         for(int i = 0;i<2;i++){
             itemModel_h itemModel = new itemModel_h();
-            itemModel.setAirName("小米空调");
+            itemModel.setAirName("燃气热水器");
             itemModel.setRoomName("客厅");
             itemList.add(itemModel);
         }
@@ -92,7 +91,7 @@ public class air_condition_list_H extends Fragment implements View.OnClickListen
             case R.id.water_list_add_btn:
                 //点击新增按钮
                 final CommonDialog dialog = new CommonDialog(context);
-                dialog.setTitle("新增空调设备");
+                dialog.setTitle("新增热水设备");
                 dialog.setSingle(true).setOnClickBottomListener(new CommonDialog.OnClickBottomListener() {
                     @Override
                     public void onPositiveClick() {
@@ -117,6 +116,6 @@ public class air_condition_list_H extends Fragment implements View.OnClickListen
         NavController navController = Navigation.findNavController(view);
         Bundle bundle = new Bundle();
         bundle.putString("num", String.valueOf(itemId));
-        navController.navigate(R.id.action_air_condition_list_H_to_air_condition_control_H,bundle);
+        navController.navigate(R.id.action_water_list_H_to_water_control_H,bundle);
     }
 }

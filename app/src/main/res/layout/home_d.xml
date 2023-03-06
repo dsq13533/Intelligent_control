@@ -306,6 +306,7 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:clickable="true"
+        android:src="@mipmap/voice_assistant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/on_off_h" />

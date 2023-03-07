@@ -1,8 +1,15 @@
 package com.djht.fourteenth_session.DataBase;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.djht.fourteenth_session.DSQ.DataBase.DBService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class DBservice extends SQLiteOpenHelper {
 
@@ -51,3 +58,25 @@ public class DBservice extends SQLiteOpenHelper {
         }
     }
 }
+
+/**
+ * 使用实例
+ */
+//    DBService data_operate=new DBService(context,"diary.db",null,Version.DB_Version);//最后一个参数是数据库版本
+//    List<Map<String,Object>> listitem=new ArrayList<>();
+//    Cursor data = data_operate.getReadableDatabase().query(DBname.ACCOUNT, null, null, null, null, null, null);
+//        while(data.moveToNext())
+//                {
+//                Map<String,Object> map=new HashMap<>();
+//        map.put("account",data.getString(1));
+//        map.put("password",data.getString(2));
+//        listitem.add(map);
+//        }
+//
+//        SimpleAdapter adapter=new SimpleAdapter(getContext(),
+//        listitem,
+//        R.layout.account_record_data_layout,
+//        new String[]{"account","password"},
+//        new int[]{R.id.bat_data_account,R.id.bat_data_password});
+//
+//        account_record_list.setAdapter(adapter);

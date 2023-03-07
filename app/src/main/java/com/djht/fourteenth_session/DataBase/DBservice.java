@@ -8,19 +8,19 @@ public class DBservice extends SQLiteOpenHelper {
 
     //智能灯【灯编号 | 灯名字 | 灯位置 | 开启状态】
     String LIGHT="create table light(id integer primary key autoincrement,number,name,location,state);";
-    String LIADD="insert into light(number,name,location,state) values('1945.10.1','fffff','','');";
+    String LIADD="insert into light(number,name,location,state) values('001','主灯','卧室','0');";
 
     //智能门锁【锁编号 | 锁密码 | 锁状态】
     String LOCK="create table lock(id integer primary key autoincrement,number,password,state);";
-    String LOADD="insert into lock(number,password,state) values('注册','','')";
+    String LOADD="insert into lock(number,password,state) values('001','123456','0')";
 
     //智能空调【空调编号 | 空调名字 | 空调位置 | 空调温度 | 空调状态】
     String AIR="create table air(id integer primary key autoincrement,number,name,location,temperature,state);";
-    String AIADD="insert into air(number,name,location,temperature,state) values('时间','','','','');";
+    String AIADD="insert into air(number,name,location,temperature,state) values('001','海尔挂墙式','客厅','20','0');";
 
     //智能热水器【热水器编号 | 热水器名字 | 热水器温度 | 热水器状态】
     String HEATER="create table heater(id integer primary key autoincrement,number,name,temperature,state);";
-    String HEADD="insert into heater(name,data) values('switch','0'),('QQ名字','吾日三省吾身');";
+    String HEADD="insert into heater(number,name,temperature,state) values('001','一楼','20','0');";
 
 
 

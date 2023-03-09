@@ -1,6 +1,9 @@
 package com.djht.fourteenth_session.HJK.Fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -16,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.djht.fourteenth_session.DataBase.DBService;
+import com.djht.fourteenth_session.DataBase.Version;
 import com.djht.fourteenth_session.HJK.airRecyclerViewAdapter;
 import com.djht.fourteenth_session.HJK.air_condition_main_h;
 import com.djht.fourteenth_session.R;
@@ -35,7 +40,7 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
     private View low_wind_btn;
     private View back_ground;
     private View back_btn;
-    private static int num;
+    private static String num;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,11 +85,22 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
         hight_wind_btn.setVisibility(View.INVISIBLE);
         mid_wind_btn.setVisibility(View.INVISIBLE);
         low_wind_btn.setVisibility(View.INVISIBLE);
-        num = Integer.parseInt(getArguments().getString("num"));//获得list页面的参数
-//        System.out.println(num);
+        num = getArguments().getString("num");//获得list页面的参数
+        getData(view.getContext());
         String itemNum = String.valueOf(num);
-        condition_name.setText(itemNum);
     }
+
+    @SuppressLint("Range")
+    public void getData(Context context){
+        DBService db =new DBService(getContext(),"diary.db",null, Version.DB_Version);//最后一个参数是数据库版本
+        Cursor cursor = db.getReadableDatabase().query("air", null,"number=?",new String[]{num},null,null,null);
+        cursor.moveToFirst();
+        text_temperature.setText(cursor.getString(cursor.getColumnIndex("temperature")));
+        condition_name.setText(cursor.getString(cursor.getColumnIndex("name")));
+        on_off_state = cursor.getInt(cursor.getColumnIndex("state"));
+        cursor.close();
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){

@@ -16,12 +16,13 @@ import java.util.ArrayList;
 
 public class waterRecylerViewAdapter extends RecyclerView.Adapter<waterRecylerViewAdapter.MyViewHolder>{
     private Context context;
-    private ArrayList<itemModel_h> itemList;
-    private static airRecyclerViewAdapter.ItemClickListener mListener;
+    private ArrayList<water_itemModel_h> itemList;
+    private static waterRecylerViewAdapter.ItemClickListener mListener;
+    private int state;
     public interface ItemClickListener {
-        void onItemClicked(int itemId);
+        void onItemClicked(String itemId);
     }
-    public waterRecylerViewAdapter(Context context, ArrayList<itemModel_h> itemList){
+    public waterRecylerViewAdapter(Context context, ArrayList<water_itemModel_h> itemList){
         this.context = context;
         this.itemList = itemList;
     }
@@ -29,7 +30,7 @@ public class waterRecylerViewAdapter extends RecyclerView.Adapter<waterRecylerVi
      * 回调函数，在adpter与fragment之间进行传参
      * @param listener
      */
-    public waterRecylerViewAdapter(airRecyclerViewAdapter.ItemClickListener listener) {
+    public waterRecylerViewAdapter(waterRecylerViewAdapter.ItemClickListener listener) {
         this.mListener = listener;
     }
     @NonNull
@@ -41,14 +42,36 @@ public class waterRecylerViewAdapter extends RecyclerView.Adapter<waterRecylerVi
 
     @Override
     public void onBindViewHolder(@NonNull waterRecylerViewAdapter.MyViewHolder holder, int position) {
-        itemModel_h data = itemList.get(position);
+        water_itemModel_h data = itemList.get(position);
         holder.airName.setText(data.getAirName());
         holder.roomName.setText(data.getRoomName());
-        int id = position;
+        state = Integer.parseInt(data.getState());//获取状态改变颜色
+
+        //判断是否为开机状态
+        if(state == 1){
+            holder.air_item_btn.setBackgroundResource(R.drawable.on_state_air_conditon_btn_h);
+        }else{
+            holder.air_item_btn.setBackgroundResource(R.drawable.off_state_air_conditon_btn_h);
+        }
+        //id是数据库中的number
+        String id = data.getNumber();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onItemClicked(id);
+            }
+        });
+        //点击开关进行背景切换
+        holder.air_item_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(state == 1){
+                    holder.air_item_btn.setBackgroundResource(R.drawable.off_state_air_conditon_btn_h);
+                    state = 0;
+                }else{
+                    holder.air_item_btn.setBackgroundResource(R.drawable.on_state_air_conditon_btn_h);
+                    state = 1;
+                }
             }
         });
     }
@@ -61,11 +84,12 @@ public class waterRecylerViewAdapter extends RecyclerView.Adapter<waterRecylerVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView airName;
         private TextView roomName;
-        ImageView on_off_btn;
+        private ImageView air_item_btn;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             airName = itemView.findViewById(R.id.air_condition_item_name);
             roomName = itemView.findViewById(R.id.air_room_name);
+            air_item_btn = itemView.findViewById(R.id.air_item_btn);
         }
     }
 }

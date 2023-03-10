@@ -81,14 +81,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <TextView
         android:id="@+id/light_state"
-        android:layout_width="90dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Button"
+        android:gravity="center"
+        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="@+id/guideline29" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

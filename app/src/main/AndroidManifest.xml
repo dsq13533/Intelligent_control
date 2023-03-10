@@ -7,19 +7,21 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 以下文件权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/app_icon"
+        android:icon="@mipmap/power_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/app_icon"
+        android:roundIcon="@mipmap/power_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CommonLoadPanelActivity"></activity>
         <activity
             android:name=".HJK.water_main_h"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_water_main_h">
+            android:label="@string/title_activity_water_main_h"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

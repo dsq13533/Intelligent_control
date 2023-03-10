@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -16,17 +17,24 @@ import com.djht.fourteenth_session.R;
 public class CommonDialog extends Dialog {
 
     private TextView titleTv ;
-    private Button negtiveBn ,positiveBn;
+    private Button negtiveBn ,positiveBn,search;
     private Spinner light_spinner;
     private TextView light_name_Edit;
     private View columnLineView ;
+    private View.OnClickListener mClickListener;
 
     public CommonDialog(Context context) {
         super(context, R.style.CustomDialog);
     }
 
+    public CommonDialog(Context context,View.OnClickListener clickListener) {
+        super(context, R.style.CustomDialog);
+        this.mClickListener = clickListener;
+    }
+
     private String title;
     private String positive,negtive ;
+    private boolean isSearch;
     private String Light_spinner,Light_name;
     private boolean isSingle = false;
     private int imageResId = -1 ;
@@ -69,6 +77,7 @@ public class CommonDialog extends Dialog {
                 }
             }
         });
+
     }
 
     /**
@@ -103,6 +112,7 @@ public class CommonDialog extends Dialog {
             negtiveBn.setVisibility(View.VISIBLE);
             columnLineView.setVisibility(View.VISIBLE);
         }
+
     }
 
     @Override
@@ -117,6 +127,8 @@ public class CommonDialog extends Dialog {
     private void initView() {
         negtiveBn = (Button) findViewById(R.id.Common_negtive);
         positiveBn = (Button) findViewById(R.id.Common_positive);
+        search = (Button) findViewById(R.id.Common_search);
+        search.setOnClickListener(mClickListener);
         light_spinner=findViewById(R.id.light_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.destination, android.R.layout.simple_spinner_item);
@@ -184,6 +196,16 @@ public class CommonDialog extends Dialog {
 
     public CommonDialog setSingle(boolean single) {
         isSingle = single;
+        return this;
+    }
+
+
+    public boolean isSearch() {
+        return isSearch;
+    }
+
+    public CommonDialog setSearch(boolean search) {
+        isSearch = search;
         return this ;
     }
     public String getPositive() {

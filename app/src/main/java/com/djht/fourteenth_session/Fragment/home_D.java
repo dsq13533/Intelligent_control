@@ -3,12 +3,14 @@ package com.djht.fourteenth_session.Fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,12 +23,21 @@ import com.djht.fourteenth_session.HJK.air_condition_main_h;
 import com.djht.fourteenth_session.HJK.water_main_h;
 import com.djht.fourteenth_session.R;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class home_D extends Fragment implements View.OnClickListener{
 
     private ConstraintLayout main_light;
     private ConstraintLayout main_air_conditioning;
     private ConstraintLayout main_electronic_door_lock;
     private ConstraintLayout main_water_heater;
+    private ConstraintLayout main_more_three;
 
     @Nullable
     @Override
@@ -50,6 +61,8 @@ public class home_D extends Fragment implements View.OnClickListener{
         main_electronic_door_lock.setOnClickListener(this);
         main_water_heater=getActivity().findViewById(R.id.main_water_heater);
         main_water_heater.setOnClickListener(this);
+        main_more_three=getActivity().findViewById(R.id.main_more_three);
+        main_more_three.setOnClickListener(this);
     }
 
     @Override

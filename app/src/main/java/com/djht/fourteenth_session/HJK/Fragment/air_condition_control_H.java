@@ -77,6 +77,7 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
         int off_color = Color.rgb(0,0,0);
         drawable.setColor(off_color);
 
+        text_temperature.setVisibility(View.INVISIBLE);
         snow_btn.setVisibility(View.INVISIBLE);
         heat_btn.setVisibility(View.INVISIBLE);
         air_improve_btn.setVisibility(View.INVISIBLE);
@@ -154,6 +155,7 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
             int on_back_color = Color.rgb(223,223,225);
             drawable.setColor(on_color);
             drawable.setColor(on_color);
+            text_temperature.setVisibility(View.VISIBLE);
             back_ground.setBackgroundColor(on_back_color);
             snow_btn.setVisibility(View.VISIBLE);
             heat_btn.setVisibility(View.VISIBLE);
@@ -170,6 +172,7 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
             int back_off_color = Color.rgb(204,207,217);
             back_ground.setBackgroundColor(back_off_color);
             snow_btn.setVisibility(View.INVISIBLE);
+            text_temperature.setVisibility(View.INVISIBLE);
             heat_btn.setVisibility(View.INVISIBLE);
             air_improve_btn.setVisibility(View.INVISIBLE);
             drop_temperature_btn.setVisibility(View.INVISIBLE);

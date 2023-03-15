@@ -35,6 +35,7 @@ public class water_control_H extends Fragment implements View.OnClickListener {
     private Button add_temperature_btn;
     private TextView text_temperature;
     private TextView condition_name;
+    private TextView degree;
     private View back_ground;
     private View back_btn;
     private Context context;
@@ -64,6 +65,7 @@ public class water_control_H extends Fragment implements View.OnClickListener {
         back_ground = view.findViewById(R.id.back_groud);
         back_btn = view.findViewById(R.id.back_btn);
         on_off_btn.setOnClickListener(this);
+        degree = view.findViewById(R.id.degree);
         add_temperature_btn.setOnClickListener(this);
         drop_temperature_btn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
@@ -71,6 +73,8 @@ public class water_control_H extends Fragment implements View.OnClickListener {
         int off_color = Color.rgb(0,0,0);
         drawable.setColor(off_color);
 
+        degree.setVisibility(View.INVISIBLE);
+        text_temperature.setVisibility(View.INVISIBLE);
         snow_btn.setVisibility(View.INVISIBLE);
         heat_btn.setVisibility(View.INVISIBLE);
         air_improve_btn.setVisibility(View.INVISIBLE);
@@ -155,6 +159,8 @@ public class water_control_H extends Fragment implements View.OnClickListener {
             air_improve_btn.setVisibility(View.VISIBLE);
             drop_temperature_btn.setVisibility(View.VISIBLE);
             add_temperature_btn.setVisibility(View.VISIBLE);
+            degree.setVisibility(View.VISIBLE);
+            text_temperature.setVisibility(View.VISIBLE);
         }else if(on_off_state==1){
             on_off_state = 0;
             int off_color = Color.rgb(0,0,0);
@@ -162,7 +168,9 @@ public class water_control_H extends Fragment implements View.OnClickListener {
             int back_off_color = Color.rgb(204,207,217);
             back_ground.setBackgroundColor(back_off_color);
             snow_btn.setVisibility(View.INVISIBLE);
+            degree.setVisibility(View.INVISIBLE);
             heat_btn.setVisibility(View.INVISIBLE);
+            text_temperature.setVisibility(View.INVISIBLE);
             air_improve_btn.setVisibility(View.INVISIBLE);
             drop_temperature_btn.setVisibility(View.INVISIBLE);
             add_temperature_btn.setVisibility(View.INVISIBLE);

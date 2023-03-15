@@ -20,6 +20,8 @@
         tools:layout="@layout/air_condition_list__h" >
         <action
             android:id="@+id/action_air_condition_list_H_to_air_condition_control_H"
-            app:destination="@id/air_condition_control_H" />
+            app:destination="@id/air_condition_control_H"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 </navigation>

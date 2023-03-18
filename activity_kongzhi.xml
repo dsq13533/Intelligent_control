@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ZZY.object.Fragement.kongzhiActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:text="控制界面"
+        android:textSize="36sp" />
+
+
+    <ImageView
+        android:layout_width="88dp"
+        android:layout_height="109dp"
+        android:layout_alignBottom="@+id/null"
+
+        android:layout_marginLeft="223dp"
+        android:layout_marginTop="400dp"
+        android:src="@mipmap/ccc" />
+
+    <ImageView
+        android:layout_width="74dp"
+        android:layout_height="109dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="400dp"
+
+        android:src="@mipmap/cca" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开锁"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="520dp"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关锁"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="520dp"
+        />
+
+
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_marginLeft="189dp"
+        android:layout_marginTop="626dp"
+        android:onClick="BottonBeCliecked"
+        android:text="返回" />
+
+
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.djht.fourteenth_session.ZZY.object.Fragement;
+package com.djht.fourteenth_session.ZZY;
 
 import androidx.appcompat.app.AppCompatActivity;
 

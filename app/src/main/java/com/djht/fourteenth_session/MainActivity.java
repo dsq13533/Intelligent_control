@@ -11,7 +11,6 @@ import android.os.Message;
 import android.util.DisplayMetrics;
 import android.widget.ImageView;
 
-import com.djht.fourteenth_session.DSQ.Main_panel_d;
 import com.djht.fourteenth_session.Utils.Get_image_D;
 import com.djht.fourteenth_session.Utils.Image_url;
 

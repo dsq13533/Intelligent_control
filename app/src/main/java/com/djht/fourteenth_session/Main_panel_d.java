@@ -1,4 +1,4 @@
-package com.djht.fourteenth_session.DSQ;
+package com.djht.fourteenth_session;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

@@ -54,13 +54,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_electronic_door_lock"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="128dp"
+        android:layout_height="141dp"
         android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline13"
-        app:layout_constraintEnd_toStartOf="@+id/guideline17"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12">
 
         <ImageView
             android:id="@+id/electronic_door_lock"
@@ -93,7 +93,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.60" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_air_conditioning"
@@ -141,13 +140,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_water_heater"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="130dp"
+        android:layout_height="141dp"
         android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline12">
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintStart_toStartOf="@+id/guideline15"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/water_heater"

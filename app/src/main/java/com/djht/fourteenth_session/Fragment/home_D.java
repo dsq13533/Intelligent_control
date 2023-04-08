@@ -22,6 +22,7 @@ import com.djht.fourteenth_session.DSQ.light;
 import com.djht.fourteenth_session.HJK.air_condition_main_h;
 import com.djht.fourteenth_session.HJK.water_main_h;
 import com.djht.fourteenth_session.R;
+import com.djht.fourteenth_session.ZZY.zhuActivity;
 
 import java.io.IOException;
 
@@ -75,6 +76,8 @@ public class home_D extends Fragment implements View.OnClickListener{
                 startActivity(light);
                 break;
             case R.id.main_electronic_door_lock:
+                Intent main_electronic_door_lock = new Intent(this.getActivity(), zhuActivity.class);
+                startActivity(main_electronic_door_lock);
                 break;
             case R.id.main_air_conditioning:
                 Intent intent_air_condition = new Intent(this.getActivity(), air_condition_main_h.class);

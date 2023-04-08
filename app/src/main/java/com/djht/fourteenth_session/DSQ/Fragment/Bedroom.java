@@ -92,7 +92,7 @@ public class Bedroom extends Fragment {
                         }
                         Request request = new Request.Builder()
                                 .get()
-                                .url("http://192.168.137.36/update?float=1&int=2&button="+LED)
+                                .url("http://192.168.137.2/update?float=1&int=2&button="+LED)
                                 .build();
                         client.newCall(request).enqueue(new Callback() {
                             @Override

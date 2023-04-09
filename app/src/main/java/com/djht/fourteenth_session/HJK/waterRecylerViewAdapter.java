@@ -62,18 +62,18 @@ public class waterRecylerViewAdapter extends RecyclerView.Adapter<waterRecylerVi
             }
         });
         //点击开关进行背景切换
-        holder.air_item_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(state == 1){
-                    holder.air_item_btn.setBackgroundResource(R.drawable.off_state_air_conditon_btn_h);
-                    state = 0;
-                }else{
-                    holder.air_item_btn.setBackgroundResource(R.drawable.on_state_air_conditon_btn_h);
-                    state = 1;
-                }
-            }
-        });
+//        holder.air_item_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(state == 1){
+//                    holder.air_item_btn.setBackgroundResource(R.drawable.off_state_air_conditon_btn_h);
+//                    state = 0;
+//                }else{
+//                    holder.air_item_btn.setBackgroundResource(R.drawable.on_state_air_conditon_btn_h);
+//                    state = 1;
+//                }
+//            }
+//        });
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.djht.fourteenth_session.HJK.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -10,12 +11,16 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.djht.fourteenth_session.CommonLoadPanelActivity;
+import com.djht.fourteenth_session.DSQ.light;
+import com.djht.fourteenth_session.DSQ.light_setting;
 import com.djht.fourteenth_session.DataBase.DBService;
 import com.djht.fourteenth_session.DSQ.Dialog.CommonDialog;
 import com.djht.fourteenth_session.DataBase.Version;
@@ -33,6 +38,7 @@ public class water_list_H extends Fragment implements View.OnClickListener, wate
     private ImageView back_btn;
     private ImageView add_btn;
     private Context context;
+    private Handler handler=new Handler();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,27 +98,36 @@ public class water_list_H extends Fragment implements View.OnClickListener, wate
 
     @Override
     public void onClick(View view) {
+        final CommonDialog dialog = new CommonDialog(context,this);
         switch (view.getId()) {
-
             case R.id.water_list_back_btn:
                 getActivity().finish();
                 break;
             case R.id.water_list_add_btn:
                 //点击新增按钮
-                final CommonDialog dialog = new CommonDialog(context);
                 dialog.setTitle("新增热水设备");
                 dialog.setSingle(true).setOnClickBottomListener(new CommonDialog.OnClickBottomListener() {
                     @Override
                     public void onPositiveClick() {
                         dialog.dismiss();
-                        Toast.makeText(context,dialog.getLight_name()+dialog.getLight_spinner(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context,"未找到设备添加失败",Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onNegtiveClick() {
                         dialog.dismiss();
-                        Toast.makeText(context,"ssss",Toast.LENGTH_SHORT).show();
                     }
                 }).show();
+                break;
+            case R.id.Common_search:
+                //搜索按钮逻辑
+                Intent intent=new Intent(context, CommonLoadPanelActivity.class);
+                startActivity(intent);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(context,"附近未找到设备",Toast.LENGTH_SHORT).show();
+                    }
+                },2000);
                 break;
             default:
                 break;
@@ -124,6 +139,12 @@ public class water_list_H extends Fragment implements View.OnClickListener, wate
         NavController navController = Navigation.findNavController(view);
         Bundle bundle = new Bundle();
         bundle.putString("num", String.valueOf(itemId));
-        navController.navigate(R.id.action_water_list_H_to_water_control_H,bundle);
+        boolean off = true;
+        if(off){
+            Toast.makeText(getView().getContext(),"设备未连接请重试",Toast.LENGTH_SHORT).show();
+        }else{
+            navController.navigate(R.id.action_water_list_H_to_water_control_H,bundle);
+        }
+
     }
 }

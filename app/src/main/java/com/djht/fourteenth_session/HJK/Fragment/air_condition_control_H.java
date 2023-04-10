@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.djht.fourteenth_session.DataBase.DBService;
 import com.djht.fourteenth_session.DataBase.Version;
@@ -69,10 +70,19 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
         back_ground = view.findViewById(R.id.back_groud);
         low_wind_btn = view.findViewById(R.id.low_wind_btn);
         back_btn = view.findViewById(R.id.back_btn);
+
+        snow_btn.setOnClickListener(this);
+        heat_btn.setOnClickListener(this);
+        air_improve_btn.setOnClickListener(this);
+        low_wind_btn.setOnClickListener(this);
+        mid_wind_btn.setOnClickListener(this);
+        hight_wind_btn.setOnClickListener(this);
         on_off_btn.setOnClickListener(this);
         add_temperature_btn.setOnClickListener(this);
         drop_temperature_btn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
+
+
         GradientDrawable drawable =(GradientDrawable)on_off_btn.getBackground();
         int off_color = Color.rgb(0,0,0);
         drawable.setColor(off_color);
@@ -119,6 +129,24 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
             case R.id.back_btn:
                 NavController nav = Navigation.findNavController(view);
                 nav.popBackStack();
+                break;
+            case R.id.snow_btn:
+                Toast.makeText(getView().getContext(),"制冷",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.heat_btn:
+                Toast.makeText(getView().getContext(),"热风",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.hight_wind:
+                Toast.makeText(getView().getContext(),"大风量",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.low_wind_btn:
+                Toast.makeText(getView().getContext(),"小风量",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mid_wind:
+                Toast.makeText(getView().getContext(),"中等风",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.air_improve_btn:
+                Toast.makeText(getView().getContext(),"空气循环",Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
@@ -182,6 +210,7 @@ public class air_condition_control_H extends Fragment implements View.OnClickLis
             low_wind_btn.setVisibility(View.INVISIBLE);
         }
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
